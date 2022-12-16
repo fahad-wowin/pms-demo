@@ -1,0 +1,137 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.earnings-card {
+	border-radius: 15px !important;
+	cursor: pointer !important;
+	.card{
+		border-radius: 15px !important;
+	}
+}
+.paper{
+	border-radius: 15px !important;
+	padding: 15px !important;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .05) !important;
+}
+
+.house_kping_sts_tbl th{
+	font-size:12px !important;
+	padding: 5px !important;
+}
+.p_fix{
+	position: absolute !important;
+}
+
+.error_msg_lbl {
+	color: #ea5455 !important;
+}
+.border_red{
+	border-color: 1px solid #ea5455 !important;
+}
+// scrollbar webkit
+::-webkit-scrollbar:horizontal {
+	display: auto !important;
+	height: 0.4rem !important;
+}
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+	border-radius: 50rem;
+}
+
+iframe {
+	pointer-events: auto;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #7367f0 !important;
+	border-radius: 50rem;
+}
+
+::-webkit-scrollbar-track {
+	border: 1px solid;
+	border-radius: 50rem;
+	border-color: #c0c0c0 !important;
+}
+
+.floor-dropdown{
+	z-index: 99;
+}
+.discount-error{
+	margin-left: 80px;
+}
+.date-error{
+	margin-left: 115px;
+}
+.name-error {
+	margin-left: 120px;
+}
+.Amount {
+	margin-left: 5px;
+}
+.roomsBookedDropdown {
+	width: 120px;
+}
+.discountTypeDropdown {
+	width: 130px;
+}
+.discountField {
+	width: 135px;
+}
+.mealCol {
+	width: 300px;
+}
+.mealDropdown {
+	width: 300px;
+}
+.occupantsCol{
+	width: 45%;
+}
+.adultsDropdown {
+	width: 70px;
+}
+// .paymentType {
+// 	margin-left: 116px;
+// }
+.bookingSource {
+	margin-left: 116px;
+}
+// .mealName {
+// 	margin-left: 117px;
+// }
+// .mealType {
+// 	margin-left: 84px;
+// }
+.editMealName {
+	margin-left: 83px;
+}
+.editMealType {
+	margin-left: 90px;
+}
+.paymentTypeName {
+	margin-left: 68px;
+}
+.typeLabel {
+	width: 110px;
+}
+// .mealTypePrice {
+// 	margin-left: 52px;
+// }
+.bookingSourceName {
+	margin-left: 65px;
+}
+.editPaymentModeName {
+	margin-left: 66px;
+}
+
+.modal-backdrop.show {
+    opacity: 0.75;
+}
