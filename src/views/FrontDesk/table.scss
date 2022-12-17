@@ -36,4 +36,14 @@
     text-align: center;
     }  
     
+    .booking-btn {
+        transition: all .3s;
+    }
+    .transparent {
+        opacity: 0;
+    }
+    .empty-booking:hover > .booking-btn.d-none{
+        display: inline-block !important;
+        opacity: 1 !important;
+    }
 }

@@ -1,10 +1,12 @@
 import React from 'react'
 import moment from 'moment'
 import { FaArrowLeft, FaUserTie } from 'react-icons/fa'
-import { Alert, Card, UncontrolledTooltip } from 'reactstrap'
-import { ArrowLeft, ChevronLeft, ChevronRight } from 'react-feather'
+import { Alert, Badge, Card, UncontrolledTooltip } from 'reactstrap'
+import { ArrowLeft, ChevronLeft, ChevronRight, PlusCircle } from 'react-feather'
+import { useNavigate } from 'react-router-dom'
 
 const RoomData = (props) => {
+    const navigate = useNavigate()
 
     const roomId = props.roomId
     console.log('roomId', roomId)
@@ -12,6 +14,11 @@ const RoomData = (props) => {
 
     const roomData = props.data
     console.log('roomData', roomData)
+
+    const MakeMyBooking = (checkinDate, room) => {
+        navigate(`/reservation`) // TODO - need to preset the checkin date and highlight the room type 
+        log(room, checkinDate)
+    }
 
     return (
         <>
@@ -70,15 +77,15 @@ const RoomData = (props) => {
                                             }
                                             const posid = roomItem.RoomAllocationID
                                             return (
-                                                <td key={`roomitemtd_${indx}`} colSpan={colspan}>
+                                                <td key={`roomitemtd_${index}_${indx}`} colSpan={colspan}>
                                                     
-                                                    <Alert className='mb-0' id={posid} style={{ cursor: 'pointer' }} color='success' onClick={() => (props.setOpenRoomAllocationID(roomItem.RoomAllocationID), props.handleOpen())}>
+                                                    <Alert className='my-50' id={posid} style={{ cursor: 'pointer' }} color='success' onClick={() => (props.setOpenRoomAllocationID(roomItem.RoomAllocationID), props.handleOpen())}>
                                                     {
                                                         left ? <span  className='position-absolute start-0' >{days}<ChevronLeft style={{scale: '0.75'}} /></span> : null
                                                     }
-                                                        <h6 className='alert-heading' title={`${roomItem.GuestName} (${roomItem.GuestMobileNumber})`} >{roomItem.GuestName}</h6>
+                                                        <h6 className='text-success m-0 fw-bolder p-25' title={`${roomItem.GuestName} (${roomItem.GuestMobileNumber})`} >{roomItem.GuestName}</h6>
                                                         <sup>{roomItem.GuestMobileNumber}</sup>
-                                                        <sup>{roomItem.RoomID}</sup>
+                                                        {/* <sup>{roomItem.RoomID}</sup> */}
                                                     {
                                                         more ? <span  className='position-absolute end-0 top-0' ><ChevronRight style={{scale: '0.75'}} />{days}</span> : null
                                                     }
@@ -95,7 +102,13 @@ const RoomData = (props) => {
 
                                                 } else {
                                                     return (
-                                                        <td key={`roomitemtd_${indx}`} ></td>
+                                                        <td key={`roomitemtd_${index}_${indx}`} className='empty-booking'>
+                                                            <Badge id={`roomitemtd_${index}_${indx}`} onClick={() => MakeMyBooking(dte, roomItem)} className={`px-75 me-25 mb-25 cursor-pointer booking-btn badge-glow d-none transparent`} color={'light-primary'} pill><PlusCircle /> Book</Badge>
+                                                            <UncontrolledTooltip placement='top' target={`roomitemtd_${index}_${indx}`} className="bg-success">
+                                                                <div>Checkin date: {moment(dte).format('l')} </div>
+                                                                <div>Room No: {roomItem.RoomNo}</div>
+                                                            </UncontrolledTooltip>
+                                                        </td>
                                                     )
                                                 }
                                             

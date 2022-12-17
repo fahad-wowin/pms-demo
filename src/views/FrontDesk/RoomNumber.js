@@ -548,7 +548,7 @@ const RoomNumber = (props) => {
                     {
                       datesArr.map((date, index) => {
                         return (
-                          <th key={`${date}_${index}`} className='text-center'><span>{moment(date).format("ddd")}</span> <span className='text-nowrap'>{moment(date).format("D MMM YY")}</span></th>
+                          <th key={`${date}_${index}`} className='text-center'><span>{moment(date).format("ddd")}</span> <span className='text-nowrap'>{moment(date).format("DD")}</span></th>
                         )
                       })
                     }

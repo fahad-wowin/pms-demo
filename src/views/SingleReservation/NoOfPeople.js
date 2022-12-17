@@ -22,12 +22,12 @@ const NoOfPeople = ({ r, i, getPrice, mealsList, updateBookRoom, bookingData }) 
     console.log(r)
     console.log(bookingData)
     const [updated, setUpdated] = useState(false)
-    const [mealPrice, setMealPrice] = useState('')
-    const [adult, setAdult] = useState(r.adultBase)
-    const [children, setChildren] = useState(0)
+    const [mealPrice, setMealPrice] = useState(r.selected_meal_price)
+    const [adult, setAdult] = useState(r.adult_occ)
+    const [children, setChildren] = useState(r.child_occ)
     // const [children, setChildren] = useState(r.childBase)
-    const [infant, setInfant] = useState(0)
-    const [meal, setMeal] = useState('')
+    const [infant, setInfant] = useState(r.infant_occ)
+    const [meal, setMeal] = useState(r.selected_meal)
 
     const mealsOptions = mealsList?.map(function (meals) {
         return { value: meals.MealID, label: meals.MealDisplayName }

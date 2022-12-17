@@ -8,7 +8,7 @@ const NavbarUser = () => {
   return (
     <ul className="nav navbar-nav align-items-center ms-auto">
       <NavbarSearch />
-      <GSTCalculator />
+      <li className="px-50"><GSTCalculator /></li>
       <NotificationDropdown />
       {/* <UserDropdown /> */}
     </ul>

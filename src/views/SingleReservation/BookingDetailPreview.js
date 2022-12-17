@@ -3,6 +3,7 @@ import { Button, Input, Col, Label, Modal, ModalBody, ModalHeader, Row, Form, Mo
 // import { store } from '@store/store'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import moment from 'moment'
 
 
 const BookingDetailPreview = ({ showBookingDetails, BookingError, handleFinalModal }) => {
@@ -36,7 +37,7 @@ const BookingDetailPreview = ({ showBookingDetails, BookingError, handleFinalMod
                                     }
                                     </style>
                                     <ModalHeader className='bg-transparent hide-close' toggle={confirm}>
-                                        <h1 className=' mb-1'>Room Confirmation</h1>
+                                        <h1 className=' mb-1'>Booking Confirmation</h1>
                                     </ModalHeader>
                                     <ModalBody className='px-sm-2 mx-50 pb-5'>
                                         <Row>
@@ -68,13 +69,13 @@ const BookingDetailPreview = ({ showBookingDetails, BookingError, handleFinalMod
                                                 <Label>
                                                     Check In Date
                                                 </Label>
-                                                <Input type='text' value={bookingStore.checkInDate} disabled />
+                                                <Input type='text' value={moment(bookingStore.checkInDate).format('LL')} disabled />
                                             </Col>
                                             <Col md={6}>
                                                 <Label>
                                                     Check Out Date
                                                 </Label>
-                                                <Input type='text' value={bookingStore.checkOutDate} disabled />
+                                                <Input type='text' value={moment(bookingStore.checkOutDate).format('LL')} disabled />
                                             </Col>
                                             <Col md={6}>
                                                 <Label>
